@@ -5,5 +5,6 @@ const homeController = require('../controllers/home_controller');
 
 router.get('/', passport.checkAuthentication, homeController.home);
 router.use('/users', require('./users'));
+router.use('/project', require('./project'));
 
 module.exports = router;
