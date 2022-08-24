@@ -10,3 +10,15 @@
     <h3><a href="/project">Create a Project</a></h3>
 
     <h3><a href="/users/sign-out">Sign Out</a></h3>
+
+    <ul>
+        <%for(let project of projects){%>
+            <li>
+                <a href="/project/issue/">
+                    <p><%= project.name %></p>
+                    <p><%= project.author %></p>
+                    <p><%= project.description %></p>
+                </a>
+            </li>
+        <%}%>
+    </ul>

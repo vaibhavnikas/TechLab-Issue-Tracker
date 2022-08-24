@@ -11,7 +11,7 @@ module.exports.create = async function(req, res){
     try{
         const project = await Project.create(req.body);
 
-        return res.redirect('back');
+        return res.redirect('/');
     }catch(err){
         console.log(`Error : ${err}`);
         return;
