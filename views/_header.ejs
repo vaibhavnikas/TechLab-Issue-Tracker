@@ -1,3 +1,17 @@
-<header>
-    
-</header>
+<div class="header">
+    <div class="inner_header">
+        <div class="logo_container">
+            <h1>Tech<span>Lab</span></h1>
+        </div>
+
+        <ul class="navigation">
+            <%if(locals.user){%>
+                <a href="/"><li>   <%= user.name %>   </li></a>
+                <a href="/users/sign-out"><li>Sign Out</li></a>
+            <%}else{%>
+                <a href="/users/sign-in"><li>Sign In</li></a>
+                <a href="/users/sign-up"><li>Sign Up</li></a>
+            <%}%>
+        </ul>
+    </div>
+</div>
