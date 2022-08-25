@@ -14,7 +14,7 @@
     <ul>
         <%for(let project of projects){%>
             <li>
-                <a href="/project/issue/">
+                <a href="/project/<%= project.id %>">
                     <p><%= project.name %></p>
                     <p><%= project.author %></p>
                     <p><%= project.description %></p>

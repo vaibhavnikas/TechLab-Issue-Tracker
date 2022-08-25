@@ -17,3 +17,12 @@ module.exports.create = async function(req, res){
         return;
     }
 }
+
+module.exports.projectIssues = async function(req, res){
+    const project = await Project.findById(req.params.id);
+
+    return res.render('project_issues',{
+        title: "Tech Lab | Project Issues",
+        project: project
+    });
+}
