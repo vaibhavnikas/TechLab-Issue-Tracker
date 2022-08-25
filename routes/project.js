@@ -3,8 +3,9 @@ const router = express.Router();
 const passport = require('passport');
 const projectController = require('../controllers/project_controller');
 
-router.get('/', projectController.project);
+router.get('/', projectController.createProjectForm);
 router.post('/create', projectController.create);
-router.get('/:id', projectController.projectIssues);
+router.get('/:projectId', projectController.projectIssues);
+router.post('/create-issue/:projectId', projectController.createIssue);
 
 module.exports = router;

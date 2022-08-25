@@ -1,3 +1,23 @@
 <h1>
     <%= project.name %>
 </h1>
+
+<form action="/project/create-issue/<%= project.id %>" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="text" name="author" placeholder="Author" required><br><br>
+    <textarea name="description" cols="46" rows="5" placeholder="Description"></textarea>
+    <input type="submit" value="Create Issue">
+</form>
+
+
+<ul>
+    <%if(project.issues){%>
+        <%for(issue of project.issues){%>
+            <li>
+                <p><%= issue.title %> </p>
+                <p><%= issue.author %></p>
+                <p><%= issue.description %></p>
+            </li>
+        <%}%>
+    <%}%>
+</ul>
