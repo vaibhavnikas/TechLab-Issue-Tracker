@@ -23,14 +23,18 @@
         align-items: center;
         justify-content: center;
         padding: 0px;
-        background-color: #a4c64e; }
+        background-color: rgba(116, 198, 157, 0.7); }
+        #main-container #project-container a #add-project:hover {
+          background-color: #74c69d; }
       #main-container #project-container a .project-details-tile {
         height: 350px;
         width: 350px;
-        background-color: #f4f4f4;
+        background-color: rgba(160, 219, 255, 0.3);
         border-bottom: 2px solid #8a8a8a;
         padding: 20px 0px;
         box-sizing: border-box; }
+        #main-container #project-container a .project-details-tile:hover {
+          background-color: rgba(160, 219, 255, 0.8); }
         #main-container #project-container a .project-details-tile .title {
           margin: auto;
           text-align: center;
