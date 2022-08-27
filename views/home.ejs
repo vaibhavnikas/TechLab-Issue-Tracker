@@ -1,15 +1,30 @@
     <link rel="stylesheet" href="/css/home.css">
 
-    <h3><a href="/project">Create a Project</a></h3>
-
-    <ul>
-        <%for(let project of projects){%>
-            <li>
+    <div id="main-container">
+        <div id="project-container">
+            <a href="/project">
+                <div id="add-project" class="project-details-tile">
+                    <i id="plus-icon" class="fa-solid fa-plus fa-10x" style="color: white;"></i>                    
+                </div>
+                <span id="create-project-text">Create New Project</span>
+            </a>
+            
+            <%for(project of projects){%>
                 <a href="/project/<%= project.id %>">
-                    <p><%= project.name %></p>
-                    <p><%= project.author %></p>
-                    <p><%= project.description %></p>
+                    <div class="project-details-tile">
+                        <div class="title">
+                            <%= project.name %>
+                        </div>
+
+                        <div class="author">
+                           <%= project.author %>
+                        </div>
+
+                        <div class="description">
+                            <%= project.description %>
+                        </div>
+                    </div>
                 </a>
-            </li>
-        <%}%>
-    </ul>
+            <%}%>
+        </div>
+    </div>
