@@ -33,6 +33,13 @@ module.exports.projectIssues = async function(req, res){
     }
 }
 
+module.exports.createIssueForm = function(req,res){
+    return res.render('create_issue',{
+        title: 'Tech Lab | Create Issue',
+        projectId: req.params.projectId
+    });
+}
+
 module.exports.createIssue = async function(req, res){
 
     try{

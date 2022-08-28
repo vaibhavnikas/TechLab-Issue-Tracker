@@ -6,7 +6,8 @@
 
         <ul class="navigation">
             <%if(locals.user){%>
-                <a href="/"><li>   <%= user.name %>   </li></a>
+                <a href="/"><li>   Dashboard   </li></a>
+                <a href="#"><li>  <b> <%= user.name %> </b>  </li></a>
                 <a href="/users/sign-out"><li>Sign Out</li></a>
             <%}else{%>
                 <a href="/users/sign-in"><li>Sign In</li></a>
