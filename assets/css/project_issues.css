@@ -1,0 +1,112 @@
+#main-container {
+  font-family: Montserrat, Arial, Helvetica, sans-serif; }
+  #main-container #title-container h1 {
+    width: max-content;
+    margin-left: 7vw;
+    font-size: 30px;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 2px;
+    background-color: #157fe9; }
+    #main-container #title-container h1 span {
+      color: white;
+      font-size: 16px;
+      font-weight: 400; }
+  #main-container #query-container {
+    margin: auto; }
+    #main-container #query-container #main {
+      width: max-content;
+      margin: auto;
+      font-family: Montserrat,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 15px 28px;
+      background-color: rgba(129, 202, 245, 0.1);
+      border-radius: 7px;
+      border: 1px solid #a1a1a1; }
+    #main-container #query-container h2 {
+      text-align: center;
+      font-size: 28px;
+      color: #151515;
+      margin-bottom: 20px; }
+    #main-container #query-container .input-parent {
+      display: block;
+      margin-bottom: 20px;
+      width: 82vw; }
+      #main-container #query-container .input-parent label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #151515; }
+      #main-container #query-container .input-parent input, #main-container #query-container .input-parent textarea {
+        padding: 10px 8px;
+        width: 100%;
+        font-size: 16px;
+        background: #f7f7f7;
+        border: none;
+        color: #151515;
+        border-radius: 4px;
+        outline: none; }
+        #main-container #query-container .input-parent input::-webkit-scrollbar, #main-container #query-container .input-parent textarea::-webkit-scrollbar {
+          display: none; }
+        #main-container #query-container .input-parent input:hover, #main-container #query-container .input-parent textarea:hover {
+          background: #f7f7f7; }
+        #main-container #query-container .input-parent input:focus, #main-container #query-container .input-parent textarea:focus {
+          box-shadow: 0px 0px 0px 1px #06d6a0; }
+    #main-container #query-container button {
+      padding: 10px 18px;
+      font-size: 15px;
+      background: #74c69d;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      color: #151515; }
+      #main-container #query-container button:hover {
+        opacity: 0.9; }
+      #main-container #query-container button:focus {
+        box-shadow: 0px 0px 0px 3px black; }
+  #main-container #issues-container {
+    margin: auto;
+    width: 85vw;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 50px; }
+    #main-container #issues-container #create-issue-text {
+      position: absolute;
+      top: 280px;
+      left: 100px;
+      color: white;
+      font-size: 25px;
+      font-weight: 600; }
+    #main-container #issues-container #add-issue {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      background-color: rgba(116, 198, 157, 0.7); }
+      #main-container #issues-container #add-issue:hover {
+        background-color: #74c69d; }
+    #main-container #issues-container .issue-details-tile {
+      height: 350px;
+      width: 350px;
+      background-color: rgba(160, 219, 255, 0.3);
+      border-bottom: 2px solid #8a8a8a;
+      padding: 20px 0px;
+      box-sizing: border-box;
+      margin-bottom: 58px;
+      margin-right: 58px; }
+      #main-container #issues-container .issue-details-tile:hover {
+        background-color: rgba(160, 219, 255, 0.8); }
+      #main-container #issues-container .issue-details-tile .title {
+        margin: auto;
+        text-align: center;
+        font-size: 30px;
+        color: black; }
+      #main-container #issues-container .issue-details-tile .author {
+        text-align: center;
+        color: #7d7d7d;
+        font-size: 20px;
+        margin-bottom: 30px; }
+      #main-container #issues-container .issue-details-tile .description {
+        width: 90%;
+        margin: auto;
+        color: #3d3d3d; }

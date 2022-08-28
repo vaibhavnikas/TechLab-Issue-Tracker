@@ -1,17 +1,58 @@
-<h1>
-    <%= project.name %>
-</h1>
+<link rel="stylesheet" href="/css/project_issues.css">
 
-<a href="/project/issue/<%= project.id %>">Create Issue</a>
+<div id="main-container">
+    <div id="title-container">
+        <h1>
+            <%= project.name %> <span>Created by <%= project.author %></span>
+        </h1>
+    </div>
 
-<ul>
-    <%if(project.issues){%>
+    <div id="query-container">
+        <form action="/project/issue/search" id="main" method="POST">
+            <h2>Search for Issues</h2>
+    
+            <div class="input-parent">
+                <label for="title">Title</label>
+                <input type="text" name="title" placeholder="Title" id="title" required>
+            </div>
+    
+            <div class="input-parent">
+                <label for="author">Author</label>
+                <input type="text" name="author" placeholder="Author" id="author" required>
+            </div>
+            
+            <div class="input-parent">
+                <label for="description">Description</label>
+                <textarea name="description" placeholder="Description" id="description" cols="46" rows="2" required></textarea>
+            </div>
+    
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div id="issues-container">
+
+        <a href="/project/issue/<%= project.id %>">
+            <div id="add-issue" class="issue-details-tile">
+                <i id="plus-icon" class="fa-solid fa-plus fa-10x" style="color: white;"></i>                    
+            </div>
+            <span id="create-issue-text">Create Issue</span>
+        </a>
+        
         <%for(issue of project.issues){%>
-            <li>
-                <p><%= issue.title %> </p>
-                <p><%= issue.author %></p>
-                <p><%= issue.description %></p>
-            </li>
+                <div class="issue-details-tile">
+                    <div class="title">
+                        <%= issue.title %>
+                    </div>
+
+                    <div class="author">
+                       <%= issue.author %>
+                    </div>
+
+                    <div class="description">
+                        <%= issue.description %>
+                    </div>
+                </div>
         <%}%>
-    <%}%>
-</ul>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+#main-container{
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+
+    #title-container{
+
+        h1{
+            width: max-content;
+            margin-left: 7vw;
+            font-size: 30px;
+            color: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 2px;
+            background-color: #157fe9;
+
+            span{
+                color: white;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    #query-container{
+        margin: auto;
+
+        #main{
+            width: max-content;
+            margin: auto;
+            font-family: Montserrat,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 15px 28px;
+            background-color: rgba(129, 202, 245, 0.1);
+            border-radius: 7px;
+            border: 1px solid #a1a1a1;
+        }
+
+        h2{
+            text-align: center;
+            font-size: 28px;
+            color: #151515;
+            margin-bottom: 20px;
+        }
+
+        .input-parent{
+            display: block;
+            margin-bottom: 20px;
+            width: 82vw;
+    
+            label{
+                display: block;
+                font-size: 16px;
+                margin-bottom: 8px;
+                color: #151515;
+            }
+    
+            input,textarea{
+                padding: 10px 8px;
+                width: 100%;
+                font-size: 16px;
+                background: #f7f7f7;
+                border: none;
+                color: #151515;
+                border-radius: 4px;
+                outline: none;
+
+                &::-webkit-scrollbar{
+                    display: none;
+                }
+    
+                &:hover{
+                    background: #f7f7f7;
+                }
+    
+                &:focus{
+                    box-shadow: 0px 0px 0px 1px #06d6a0;
+                }
+            }
+        }
+    
+        button{
+            padding: 10px 18px;
+            font-size: 15px;
+            background: #74c69d;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            color: #151515;
+    
+            &:hover{
+                opacity: 0.9;
+            }
+    
+            &:focus{
+                box-shadow: 0px 0px 0px 3px black;
+            }
+        }
+
+
+    }
+
+    #issues-container{
+        margin: auto;
+        width: 85vw;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin-top: 50px;
+        
+        #create-issue-text{
+            position: absolute;
+            top: 280px;
+            left: 100px;
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        #add-issue{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px;
+            background-color: rgba(116, 198, 157,0.7);
+
+            &:hover{
+                background-color:rgb(116, 198, 157);
+            }
+        }
+
+        .issue-details-tile{
+            height: 350px;
+            width: 350px;
+            background-color: rgba(160, 219, 255,0.3);
+            border-bottom: 2px solid #8a8a8a;
+            padding: 20px 0px;
+            box-sizing: border-box;
+            margin-bottom: 58px;
+            margin-right: 58px;
+
+            &:hover{
+                background-color: rgba(160,219,255,0.8);
+            }
+
+            .title{
+                margin: auto;
+                text-align: center;
+                font-size: 30px;
+                color: black;
+            }
+
+            .author{
+                text-align: center;
+                color: #7d7d7d;
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .description{
+                width: 90%;
+                margin: auto;
+                color: #3d3d3d;
+            }
+        }
+    }
+}
