@@ -50,6 +50,14 @@
                        <%= issue.author %>
                     </div>
 
+                    <div class="labels-container">
+                        <%for(label of issue.labels){%>
+                            <div class="label">
+                                <%= label %>
+                            </div>
+                        <%}%>
+                    </div>
+
                     <div class="description">
                         <%= issue.description %>
                     </div>

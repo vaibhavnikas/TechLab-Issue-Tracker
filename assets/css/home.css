@@ -32,7 +32,8 @@
         background-color: rgba(160, 219, 255, 0.3);
         border-bottom: 2px solid #8a8a8a;
         padding: 20px 0px;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        border-radius: 5px; }
         #main-container #project-container a .project-details-tile:hover {
           background-color: rgba(160, 219, 255, 0.8); }
         #main-container #project-container a .project-details-tile .title {

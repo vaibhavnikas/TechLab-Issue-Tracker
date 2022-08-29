@@ -135,6 +135,7 @@
             box-sizing: border-box;
             margin-bottom: 58px;
             margin-right: 58px;
+            border-radius: 5px;
 
             &:hover{
                 background-color: rgba(160,219,255,0.8);
@@ -144,14 +145,29 @@
                 margin: auto;
                 text-align: center;
                 font-size: 30px;
-                color: black;
+                color: #151515;
             }
 
             .author{
                 text-align: center;
                 color: #7d7d7d;
                 font-size: 20px;
-                margin-bottom: 30px;
+                margin-bottom: 10px;
+            }
+
+            .labels-container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 20px;
+                color: #f9f9f9;
+
+                .label{
+                    background-color: #3a86ff;
+                    padding: 1px;
+                    border-radius: 5%;
+                    margin-right: 2px;
+                }
             }
 
             .description{

@@ -93,19 +93,31 @@
       padding: 20px 0px;
       box-sizing: border-box;
       margin-bottom: 58px;
-      margin-right: 58px; }
+      margin-right: 58px;
+      border-radius: 5px; }
       #main-container #issues-container .issue-details-tile:hover {
         background-color: rgba(160, 219, 255, 0.8); }
       #main-container #issues-container .issue-details-tile .title {
         margin: auto;
         text-align: center;
         font-size: 30px;
-        color: black; }
+        color: #151515; }
       #main-container #issues-container .issue-details-tile .author {
         text-align: center;
         color: #7d7d7d;
         font-size: 20px;
-        margin-bottom: 30px; }
+        margin-bottom: 10px; }
+      #main-container #issues-container .issue-details-tile .labels-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+        color: #f9f9f9; }
+        #main-container #issues-container .issue-details-tile .labels-container .label {
+          background-color: #3a86ff;
+          padding: 1px;
+          border-radius: 5%;
+          margin-right: 2px; }
       #main-container #issues-container .issue-details-tile .description {
         width: 90%;
         margin: auto;
