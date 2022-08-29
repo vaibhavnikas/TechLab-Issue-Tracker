@@ -6,7 +6,7 @@ module.exports.home = async function(req, res){
         const projects = await Project.find();
 
         return res.render('home', {
-            title: "Tech Lab | Home",
+            title: "TechLab | Home",
             projects: projects
         });
 

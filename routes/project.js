@@ -9,4 +9,6 @@ router.get('/:projectId', projectController.projectIssues);
 router.get('/issue/:projectId', projectController.createIssueForm);
 router.post('/issue/create/:projectId', projectController.createIssue);
 
+router.post('/issue/search/:projectId', projectController.searchIssues);
+
 module.exports = router;

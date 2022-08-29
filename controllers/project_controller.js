@@ -3,7 +3,7 @@ const Issue = require('../models/issue');
 
 module.exports.createProjectForm = function(req, res){
     return res.render('create_project',{
-        title: 'Tech Lab | Create Project'
+        title: 'TechLab | Create Project'
     });
 }
 
@@ -24,7 +24,7 @@ module.exports.projectIssues = async function(req, res){
         const project = await Project.findById(req.params.projectId).populate('issues');
     
         return res.render('project_issues',{
-            title: "Tech Lab | Project Issues",
+            title: "TechLab | Project Issues",
             project: project
         });
     }catch(err){
@@ -33,10 +33,13 @@ module.exports.projectIssues = async function(req, res){
     }
 }
 
-module.exports.createIssueForm = function(req,res){
+module.exports.createIssueForm = async function(req,res){
+
+    let project = await Project.findById(req.params.projectId);
+
     return res.render('create_issue',{
-        title: 'Tech Lab | Create Issue',
-        projectId: req.params.projectId
+        title: 'TechLab | Create Issue',
+        project: project
     });
 }
 
@@ -47,6 +50,13 @@ module.exports.createIssue = async function(req, res){
 
         if(project){
             req.body.project = project;
+
+            if(req.body.labels.length != 0){
+                req.body.labels = req.body.labels.split(",");
+            }else{
+                req.body.labels = [];
+            }
+            
             const issue = await Issue.create(req.body);
 
             await project.issues.push(issue);
@@ -63,4 +73,48 @@ module.exports.createIssue = async function(req, res){
         console.log(`Error : ${err}`);
         return res.redirect('back');
     }
+}
+
+
+module.exports.searchIssues = async function(req, res){
+    if(req.body.labels.length == 0){
+        delete req.body.labels;
+    }else{
+        req.body.labels = req.body.labels.split(",");
+    }
+
+    let query = {};
+
+    if(req.body.title){
+        query.title = req.body.title;
+    }
+    if(req.body.author){
+        query.author = req.body.author;
+    }
+    if(req.body.description){
+        const str = req.body.description;
+        const regex = new RegExp(str,'i');
+        query.description = {$regex: regex};
+    }
+    if(req.body.labels){
+        query.labels =  {$all: req.body.labels};
+    }
+
+    let issues = await Issue.find(query).populate('project');
+
+    let issueList = [];
+
+    for(issue of issues){
+        if(issue.project.id == req.params.projectId){
+            issueList.push(issue);
+        }
+    }
+    
+    let project = await Project.findById(req.params.projectId);
+    project.issues = issueList;
+
+    return res.render('project_issues',{
+        title: `TechLab | Project Issues`,
+        project: project
+    });
 }

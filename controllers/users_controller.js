@@ -6,7 +6,7 @@ module.exports.signIn = function(req, res){
     }
 
     return res.render('sign_in', {
-        title: 'Tech Lab | Sign In'
+        title: 'TechLab | Sign In'
     });
 }
 
@@ -16,7 +16,7 @@ module.exports.signUp = function(req, res){
     }
 
     return res.render('sign_up', {
-        title: 'Tech Lab | Sign Up'
+        title: 'TechLab | Sign Up'
     });
 }
 

@@ -2,8 +2,8 @@
 
 <div id="form-container">
     &nbsp;
-    <form action="/project/issue/create/<%= projectId %>" id="main" method="POST">
-        <h2>Create Issue</h2>
+    <form action="/project/issue/create/<%= project.id %>" id="main" method="POST">
+        <h2><%=project.name%> | Create Issue</h2>
 
         <div class="input-parent">
             <label for="title">Title</label>
@@ -13,6 +13,11 @@
         <div class="input-parent">
             <label for="author">Author</label>
             <input type="text" name="author" placeholder="Author" id="author" required>
+        </div>
+
+        <div class="input-parent">
+            <label for="labels">Labels</label>
+            <input type="text" name="labels" placeholder="Enter labels separated by a comma" id="labels">
         </div>
         
         <div class="input-parent">
