@@ -1,6 +1,21 @@
 #main-container{
     font-family: Montserrat, Arial, Helvetica, sans-serif;
-    margin-top: 40px;
+    margin-top: 0px;
+
+    #title-container{
+
+        h1{
+            width: max-content;
+            margin-left: 7.1vw;
+            font-size: 30px;
+            color: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 8px 10px;
+            background-color: #157fe9;
+            border-radius: 2px;
+            font-weight: 400;
+        }
+    }
 
     #project-container{
         margin: auto;
