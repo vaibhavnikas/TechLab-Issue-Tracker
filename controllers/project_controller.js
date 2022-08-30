@@ -118,3 +118,25 @@ module.exports.searchIssues = async function(req, res){
         project: project
     });
 }
+
+module.exports.deleteProject = async function(req, res){
+    
+    await Project.findByIdAndDelete(req.params.projectId);
+
+    await Issue.deleteMany({project : req.params.projectId});
+
+    return res.redirect('back');
+}
+
+module.exports.deleteIssue = async function(req,res){
+
+    let issue = await Issue.findById(req.params.issueId);
+
+    let projectId = issue.project;
+
+    issue.remove();
+
+    let project = await Project.findByIdAndUpdate(projectId, {$pull:{issues: req.params.issueId}});
+
+    return res.redirect('back');
+}

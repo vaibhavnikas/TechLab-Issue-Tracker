@@ -11,4 +11,7 @@ router.post('/issue/create/:projectId', projectController.createIssue);
 
 router.post('/issue/search/:projectId', projectController.searchIssues);
 
+router.get('/delete/:projectId', projectController.deleteProject);
+router.get('/issue/delete/:issueId', projectController.deleteIssue);
+
 module.exports = router;
