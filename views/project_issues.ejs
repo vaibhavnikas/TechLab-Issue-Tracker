@@ -40,7 +40,8 @@
             <span id="create-issue-text">Create Issue</span>
         </a>
         
-        <%for(issue of project.issues){%>
+        <%if(project.issues.length!=0){%>
+            <%for(issue of project.issues){%>
                 <div class="issue-details-tile">
                     <div class="button-container">
                         <a class="delete-button" href="/project/issue/delete/<%= issue.id %>">Delete</a>
@@ -66,6 +67,9 @@
                         <%= issue.description %>
                     </div>
                 </div>
+            <%}%>
+        <%}else{%>
+            <span style="margin-top: 150px; margin-left: 100px; margin-bottom:100px">No Issues Found</span>
         <%}%>
     </div>
 </div>
