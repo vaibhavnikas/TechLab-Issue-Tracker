@@ -129,7 +129,7 @@
         .issue-details-tile{
             height: 350px;
             width: 350px;
-            background-color: rgba(160, 219, 255,0.3);
+            background-color: rgba(160, 219, 255,0.8);
             border-bottom: 2px solid #8a8a8a;
             padding: 20px 0px;
             box-sizing: border-box;
@@ -138,7 +138,7 @@
             border-radius: 5px;
 
             &:hover{
-                background-color: rgba(160,219,255,0.8);
+                background-color: rgba(160,219,255,0.3);
             }
 
             .title{
@@ -164,7 +164,7 @@
 
                 .label{
                     background-color: #3a86ff;
-                    padding: 1px;
+                    padding: 1px 4px;
                     border-radius: 5%;
                     margin-right: 2px;
                 }

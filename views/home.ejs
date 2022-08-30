@@ -2,29 +2,38 @@
 
     <div id="main-container">
         <div id="project-container">
-            <a href="/project">
-                <div id="add-project" class="project-details-tile">
-                    <i id="plus-icon" class="fa-solid fa-plus fa-10x" style="color: white;"></i>                    
-                </div>
-                <span id="create-project-text">Create New Project</span>
-            </a>
-            
+            <div class="wrapper">
+                <a class="project-details-outer-tile"  href="/project">
+                    <div id="add-project" class="project-details-tile">
+                        <i id="plus-icon" class="fa-solid fa-plus fa-10x" style="color: white;"></i>                    
+                    </div>
+                    <span id="create-project-text">Create New Project</span>
+                </a>
+            </div>
+
             <%for(project of projects){%>
-                <a href="/project/<%= project.id %>">
-                    <div class="project-details-tile">
-                        <div class="title">
-                            <%= project.name %>
-                        </div>
+                <div class="wrapper">
+                    <a class="project-link" href="/project/<%= project.id %>"></a>
+                    <div class="button-container">
+                        <a class="delete-button" href="/project/delete/<%= project.id %>">Delete</a>
+                    </div>
+                    
+                    <div class="project-details-outer-tile">
+                        <div class="project-details-tile">
+                            <div class="title">
+                                <%= project.name %>
+                            </div>
 
-                        <div class="author">
-                           <%= project.author %>
-                        </div>
+                            <div class="author">
+                                <%= project.author %>
+                            </div>
 
-                        <div class="description">
-                            <%= project.description %>
+                            <div class="description">
+                                <%= project.description %>
+                            </div>
                         </div>
                     </div>
-                </a>
+                </div>
             <%}%>
         </div>
     </div>
