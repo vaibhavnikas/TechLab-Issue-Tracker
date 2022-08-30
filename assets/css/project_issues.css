@@ -94,7 +94,20 @@
       box-sizing: border-box;
       margin-bottom: 58px;
       margin-right: 58px;
-      border-radius: 5px; }
+      border-radius: 5px;
+      position: relative; }
+      #main-container #issues-container .issue-details-tile .button-container {
+        position: absolute;
+        z-index: 1;
+        left: 285px;
+        top: 5px; }
+        #main-container #issues-container .issue-details-tile .button-container .delete-button {
+          color: #f7f7f7;
+          background-color: #ff7775;
+          padding: 2px 5px;
+          border-radius: 2px; }
+          #main-container #issues-container .issue-details-tile .button-container .delete-button:hover {
+            background-color: #fd4e4b; }
       #main-container #issues-container .issue-details-tile:hover {
         background-color: rgba(160, 219, 255, 0.3); }
       #main-container #issues-container .issue-details-tile .title {

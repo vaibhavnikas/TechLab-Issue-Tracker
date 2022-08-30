@@ -136,6 +136,25 @@
             margin-bottom: 58px;
             margin-right: 58px;
             border-radius: 5px;
+            position: relative;
+
+            .button-container{
+                position: absolute;
+                z-index: 1;
+                left: 285px;
+                top: 5px;
+
+                .delete-button{
+                    color: #f7f7f7;
+                    background-color: #ff7775;
+                    padding: 2px 5px;
+                    border-radius: 2px;
+
+                    &:hover{
+                        background-color: #fd4e4b;
+                    }
+                }
+            }
 
             &:hover{
                 background-color: rgba(160,219,255,0.3);

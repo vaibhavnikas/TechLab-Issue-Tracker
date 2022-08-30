@@ -42,6 +42,10 @@
         
         <%for(issue of project.issues){%>
                 <div class="issue-details-tile">
+                    <div class="button-container">
+                        <a class="delete-button" href="/project/delete/<%= project.id %>">Delete</a>
+                    </div>
+
                     <div class="title">
                         <%= issue.title %>
                     </div>
