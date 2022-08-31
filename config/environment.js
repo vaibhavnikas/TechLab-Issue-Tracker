@@ -1,6 +1,6 @@
 const development = {
     name: 'development',
-    asset_path: './public/assets',
+    asset_path: './assets',
     session_cookie_key: 'almncuejkncpdbjr',
     db: 'issue_tracker_development'
 }
