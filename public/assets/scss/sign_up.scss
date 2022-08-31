@@ -1,0 +1,88 @@
+#form-container{
+    background-color: #eeeeee;
+    height: 100%;
+
+    #main{
+        width: max-content;
+        margin: 140px auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 25px 28px;
+        background-color: #282828;
+        border-radius: 7px;
+        border: 1px solid #302d2d;
+    
+        h2{
+            text-align: center;
+            font-size: 28px;
+            font-weight: 400;
+            color: #e7e7e7;
+        }
+    
+        .input-parent{
+            display: block;
+            margin-bottom: 20px;
+            width: 18vw;
+    
+            label{
+                display: block;
+                font-size: 16px;
+                margin-bottom: 8px;
+                color: #a4a4a4;
+            }
+    
+            input{
+                padding: 10px 8px;
+                width: 100%;
+                font-size: 16px;
+                background: #323131;
+                border: none;
+                color: #c7c7c7;
+                border-radius: 4px;
+                outline: none;
+    
+                &:hover{
+                    background: #404040;
+                }
+    
+                &:focus{
+                    box-shadow: 0px 0px 0px 1px #06d6a0;
+                }
+            }
+        }
+    
+        button{
+            padding: 10px 18px;
+            font-size: 15px;
+            background: #74c69d;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            color: #151515;
+    
+            &:hover{
+                opacity: 0.9;
+            }
+    
+            &:focus{
+                box-shadow: 0px 0px 0px 3px black;
+            }
+        }
+    
+        h6{
+            color: #f4f4f4;
+            text-align: center;
+
+            &:first-of-type{
+                margin-bottom: 20px;
+            }
+
+            &:last-of-type{
+                margin-top: 20px;
+            }
+    
+            a{
+                color: #06d6a0;
+            }
+        }
+    }
+}

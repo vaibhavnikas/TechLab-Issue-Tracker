@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  height: 80px;
+  display: block;
+  background-color: #101010; }
+  .footer .inner_footer {
+    width: 85%;
+    height: 100%;
+    display: block;
+    margin: 0 auto; }
+    .footer .inner_footer .copyright_container {
+      height: 100%;
+      display: table;
+      float: left; }
+      .footer .inner_footer .copyright_container h4 {
+        color: white;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        font-family: Montserrat,Arial, Helvetica, sans-serif;
+        font-size: 16px; }
+    .footer .inner_footer .credits_container {
+      float: right;
+      height: 100%;
+      display: table; }
+      .footer .inner_footer .credits_container h4 {
+        color: white;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        font-family: Montserrat,Arial, Helvetica, sans-serif;
+        font-size: 16px; }
