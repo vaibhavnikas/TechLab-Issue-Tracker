@@ -18,16 +18,18 @@ module.exports.create = async function(req, res){
 
             await project.issues.push(issue);
             await project.save();
-
+            
+            req.flash('success', 'Issue created successfully');
             return res.redirect(`/project/${project.id}`);
         }
 
         // cannot create issue for a project which doesn't exist.
         console.log('Unauthorized action');
-
+        req.flash('error','Unauthorized action');
         return res.redirect(`/project/${project.id}`);
     }catch(err){
         console.log(`Error : ${err}`);
+        req.flash('error',"Unknown Error");
         return res.redirect('back');
     }
 }
@@ -42,6 +44,7 @@ module.exports.displayCreateIssueForm = async function(req,res){
         });
     }catch(err){
         console.log(`Error : ${err}`);
+        req.flash('error',"Unknown Error");
         return res.redirect('back');
     }
 }
@@ -88,6 +91,7 @@ module.exports.search = async function(req, res){
         });
     }catch(err){
         console.log(`Error : ${err}`);
+        req.flash('error',"Unknown Error");
         return res.redirect('back');
     }
 }
@@ -99,9 +103,11 @@ module.exports.delete = async function(req,res){
         issue.remove();
         let project = await Project.findByIdAndUpdate(projectId, {$pull:{issues: req.params.issueId}});
 
+        req.flash('success', 'Issue deleted successfully');
         return res.redirect('back');
     }catch(err){
         console.log(`Error : ${err}`);
+        req.flash('error',"Unknown Error");
         return res.redirect('back');
     }
 }
