@@ -104,7 +104,7 @@ module.exports.delete = async function(req,res){
         let project = await Project.findByIdAndUpdate(projectId, {$pull:{issues: req.params.issueId}});
 
         req.flash('success', 'Issue deleted successfully');
-        return res.redirect('back');
+        return res.redirect(`/project/${projectId}`);
     }catch(err){
         console.log(`Error : ${err}`);
         req.flash('error',"Unknown Error");

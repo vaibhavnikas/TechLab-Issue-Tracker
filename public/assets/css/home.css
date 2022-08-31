@@ -1,0 +1,92 @@
+#main-container {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  margin-top: 0px; }
+  #main-container #title-container h1 {
+    width: max-content;
+    margin-left: 7.1vw;
+    font-size: 30px;
+    color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 8px 10px;
+    background-color: #157fe9;
+    border-radius: 2px;
+    font-weight: 400; }
+  #main-container #project-container {
+    margin: auto;
+    width: 85vw;
+    display: flex;
+    flex-wrap: wrap; }
+    #main-container #project-container .wrapper {
+      margin-bottom: 58px;
+      margin-right: 58px;
+      position: relative; }
+      #main-container #project-container .wrapper .project-link {
+        position: absolute;
+        height: 350px;
+        width: 350px;
+        z-index: 1; }
+        #main-container #project-container .wrapper .project-link:hover {
+          background-color: rgba(255, 255, 255, 0.2); }
+      #main-container #project-container .wrapper .button-container {
+        position: absolute;
+        z-index: 3;
+        left: 285px;
+        top: 5px; }
+        #main-container #project-container .wrapper .button-container .delete-button {
+          color: #f7f7f7;
+          background-color: #ff7775;
+          padding: 2px 5px;
+          border-radius: 2px; }
+          #main-container #project-container .wrapper .button-container .delete-button:hover {
+            background-color: #fd4e4b; }
+      #main-container #project-container .wrapper .project-details-outer-tile {
+        height: 350px;
+        width: 350px;
+        position: relative;
+        z-index: 0; }
+        #main-container #project-container .wrapper .project-details-outer-tile #create-project-text {
+          position: absolute;
+          top: 280px;
+          left: 55px;
+          color: white;
+          font-size: 25px;
+          font-weight: 600; }
+        #main-container #project-container .wrapper .project-details-outer-tile #add-project {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0px;
+          background-color: rgba(116, 198, 157, 0.7); }
+          #main-container #project-container .wrapper .project-details-outer-tile #add-project:hover {
+            background-color: #74c69d; }
+        #main-container #project-container .wrapper .project-details-outer-tile .project-details-tile {
+          height: 350px;
+          width: 350px;
+          background-color: rgba(160, 219, 255, 0.8);
+          border-bottom: 2px solid #8a8a8a;
+          padding: 20px 0px;
+          box-sizing: border-box;
+          border-radius: 5px; }
+          #main-container #project-container .wrapper .project-details-outer-tile .project-details-tile:hover {
+            background-color: rgba(160, 219, 255, 0.3); }
+          #main-container #project-container .wrapper .project-details-outer-tile .project-details-tile .title {
+            margin: auto;
+            text-align: center;
+            font-size: 30px;
+            color: black; }
+          #main-container #project-container .wrapper .project-details-outer-tile .project-details-tile .author {
+            text-align: center;
+            color: #7d7d7d;
+            font-size: 20px;
+            margin-bottom: 25px; }
+          #main-container #project-container .wrapper .project-details-outer-tile .project-details-tile .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            padding: 2px 0px;
+            background-color: aqua;
+            height: 23px; }
+          #main-container #project-container .wrapper .project-details-outer-tile .project-details-tile .description {
+            width: 90%;
+            margin: auto;
+            color: #3d3d3d; }

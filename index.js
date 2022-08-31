@@ -1,4 +1,5 @@
 const express = require('express');
+const env = require('./config/environment');
 const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
@@ -14,19 +15,22 @@ const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 const path = require('path');
 
-app.use(sassMiddleware({
-    src: './assets/scss',
-    dest: './assets/css',
+if(env.name == 'development'){
+    app.use(sassMiddleware({
+    src: path.join(__dirname, env.asset_path, 'scss'),
+    dest: path.join(__dirname, env.asset_path, 'css'),
     debug: true,
     outputStyle: 'extended',
     prefix: '/css'
-}));
+    }));
+}
+
 
 app.use(express.urlencoded());
 
 app.use(cookieParser());
 
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
 
 app.use(expressLayouts);
 
@@ -40,7 +44,7 @@ app.set('views', './views');
 
 app.use(session({
     name: 'issue-tracker',
-    secret: 'changeTheSecretB4deployment',
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {
