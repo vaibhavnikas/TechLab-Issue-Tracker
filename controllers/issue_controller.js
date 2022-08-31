@@ -2,7 +2,6 @@ const Project = require('../models/project');
 const Issue = require('../models/issue');
 
 module.exports.create = async function(req, res){
-
     try{
         let project = await Project.findById(req.params.projectId);
 
@@ -34,67 +33,75 @@ module.exports.create = async function(req, res){
 }
 
 module.exports.displayCreateIssueForm = async function(req,res){
+    try{
+        let project = await Project.findById(req.params.projectId);
 
-    let project = await Project.findById(req.params.projectId);
-
-    return res.render('create_issue',{
-        title: 'TechLab | Create Issue',
-        project: project
-    });
+        return res.render('create_issue',{
+            title: 'TechLab | Create Issue',
+            project: project
+        });
+    }catch(err){
+        console.log(`Error : ${err}`);
+        return res.redirect('back');
+    }
 }
 
 module.exports.search = async function(req, res){
-    if(req.body.labels.length == 0){
-        delete req.body.labels;
-    }else{
-        req.body.labels = req.body.labels.split(",");
-    }
-
-    let query = {};
-
-    if(req.body.title){
-        query.title = req.body.title;
-    }
-    if(req.body.author){
-        query.author = req.body.author;
-    }
-    if(req.body.description){
-        const str = req.body.description;
-        const regex = new RegExp(str,'i');
-        query.description = {$regex: regex};
-    }
-    if(req.body.labels){
-        query.labels =  {$all: req.body.labels};
-    }
-
-    let issues = await Issue.find(query).populate('project');
-
-    let issueList = [];
-
-    for(issue of issues){
-        if(issue.project.id == req.params.projectId){
-            issueList.push(issue);
+    try{
+        if(req.body.labels.length == 0){
+            delete req.body.labels;
+        }else{
+            req.body.labels = req.body.labels.split(",");
         }
-    }
     
-    let project = await Project.findById(req.params.projectId);
-    project.issues = issueList;
-
-    return res.render('project_issues',{
-        title: `TechLab | Project Issues`,
-        project: project
-    });
+        let query = {};
+        if(req.body.title){
+            query.title = req.body.title;
+        }
+        if(req.body.author){
+            query.author = req.body.author;
+        }
+        if(req.body.description){
+            const str = req.body.description;
+            const regex = new RegExp(str,'i');
+            query.description = {$regex: regex};
+        }
+        if(req.body.labels){
+            query.labels =  {$all: req.body.labels};
+        }
+    
+        let issues = await Issue.find(query).populate('project');
+        let issueList = [];
+    
+        for(issue of issues){
+            if(issue.project.id == req.params.projectId){
+                issueList.push(issue);
+            }
+        }
+        
+        let project = await Project.findById(req.params.projectId);
+        project.issues = issueList;
+    
+        return res.render('project_issues',{
+            title: `TechLab | Project Issues`,
+            project: project
+        });
+    }catch(err){
+        console.log(`Error : ${err}`);
+        return res.redirect('back');
+    }
 }
 
 module.exports.delete = async function(req,res){
+    try{
+        let issue = await Issue.findById(req.params.issueId);
+        let projectId = issue.project;
+        issue.remove();
+        let project = await Project.findByIdAndUpdate(projectId, {$pull:{issues: req.params.issueId}});
 
-    let issue = await Issue.findById(req.params.issueId);
-
-    let projectId = issue.project;
-
-    issue.remove();
-
-    let project = await Project.findByIdAndUpdate(projectId, {$pull:{issues: req.params.issueId}});
-
-    return res.redirect('back');
+        return res.redirect('back');
+    }catch(err){
+        console.log(`Error : ${err}`);
+        return res.redirect('back');
+    }
 }

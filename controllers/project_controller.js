@@ -15,7 +15,7 @@ module.exports.create = async function(req, res){
         return res.redirect('/');
     }catch(err){
         console.log(`Error : ${err}`);
-        return;
+        return res.redirect('back');
     }
 }
 
@@ -35,10 +35,15 @@ module.exports.projectIssues = async function(req, res){
 
 module.exports.delete = async function(req, res){
     
-    await Project.findByIdAndDelete(req.params.projectId);
+    try{
 
-    await Issue.deleteMany({project : req.params.projectId});
+        await Project.findByIdAndDelete(req.params.projectId);
+        await Issue.deleteMany({project : req.params.projectId});
 
-    return res.redirect('back');
+        return res.redirect('back');
+    }catch(err){
+        console.log(`Error : ${err}`);
+        return res.redirect('back');
+    }
 }
 
