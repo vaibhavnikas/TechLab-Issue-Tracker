@@ -1,3 +1,5 @@
+// mongodb configuration file setup with mongoose 
+
 const mongoose = require('mongoose');
 const env = require('./environment');
 

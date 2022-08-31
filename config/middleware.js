@@ -1,3 +1,5 @@
+// custom middleware to set flash messages from req to res
+
 module.exports.setFlash = function(req, res, next){
     res.locals.flash = {
         'success': req.flash('success'),

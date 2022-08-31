@@ -1,6 +1,7 @@
 const Project = require('../models/project');
 const Issue = require('../models/issue');
 
+// function to create issue
 module.exports.create = async function(req, res){
     try{
         let project = await Project.findById(req.params.projectId);
@@ -34,6 +35,7 @@ module.exports.create = async function(req, res){
     }
 }
 
+// function to display create issue form
 module.exports.displayCreateIssueForm = async function(req,res){
     try{
         let project = await Project.findById(req.params.projectId);
@@ -49,6 +51,7 @@ module.exports.displayCreateIssueForm = async function(req,res){
     }
 }
 
+// function to search issues
 module.exports.search = async function(req, res){
     try{
         if(req.body.labels.length == 0){
@@ -96,6 +99,7 @@ module.exports.search = async function(req, res){
     }
 }
 
+// function to delete issue
 module.exports.delete = async function(req,res){
     try{
         let issue = await Issue.findById(req.params.issueId);

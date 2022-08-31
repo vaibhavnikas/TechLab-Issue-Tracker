@@ -1,3 +1,4 @@
+// function to pass css files to views correctly from rev-manifest
 const env = require('./environment');
 const fs = require('fs');
 const path = require('path');

@@ -1,5 +1,6 @@
 const User = require('../models/user');
 
+// function to display sign in form
 module.exports.signIn = function(req, res){
     if(req.isAuthenticated()){
         return res.redirect('back');
@@ -10,6 +11,7 @@ module.exports.signIn = function(req, res){
     });
 }
 
+// function to display sign up form
 module.exports.signUp = function(req, res){
     if(req.isAuthenticated()){
         return res.redirect('back');
@@ -20,6 +22,7 @@ module.exports.signUp = function(req, res){
     });
 }
 
+// function to create new account
 module.exports.create = async function(req, res){
     try{
         if(req.body.password != req.body.confirm_password){
@@ -45,11 +48,13 @@ module.exports.create = async function(req, res){
     }
 }
 
+// redirecting after session is created
 module.exports.createSession = function(req, res){
     req.flash('success', 'Logged In Successfully');
     return res.redirect('/');
 }
 
+// function to sign-out the user
 module.exports.destroySession = function(req, res){
     req.logout(function(user, err){
         if(err) return next(err);

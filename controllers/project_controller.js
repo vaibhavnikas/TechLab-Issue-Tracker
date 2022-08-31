@@ -1,12 +1,14 @@
 const Project = require('../models/project');
 const Issue = require('../models/issue');
 
+// function to display create project form
 module.exports.displayCreateProjectForm = function(req, res){
     return res.render('create_project',{
         title: 'TechLab | Create Project'
     });
 }
 
+// function to create project
 module.exports.create = async function(req, res){
 
     try{
@@ -21,6 +23,7 @@ module.exports.create = async function(req, res){
     }
 }
 
+// function to display project issues
 module.exports.projectIssues = async function(req, res){
     try{
         const project = await Project.findById(req.params.projectId).populate('issues');
@@ -36,6 +39,7 @@ module.exports.projectIssues = async function(req, res){
     }
 }
 
+// function to delete project
 module.exports.delete = async function(req, res){
     
     try{

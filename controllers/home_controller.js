@@ -1,5 +1,6 @@
 const Project = require('../models/project');
 
+// function to render home page
 module.exports.home = async function(req, res){
     
     try{

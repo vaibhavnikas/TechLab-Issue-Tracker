@@ -1,3 +1,5 @@
+// file to import environment variables 
+
 const development = {
     name: 'development',
     asset_path: './assets',

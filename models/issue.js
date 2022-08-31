@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// defined issueSchema
 const issueSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -26,6 +27,8 @@ const issueSchema = new mongoose.Schema({
     timestamps: true
 });
 
+// created issue model to store issues in database
 const Issue = mongoose.model('Issue', issueSchema);
 
+// exported issue model
 module.exports = Issue;
