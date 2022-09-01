@@ -61,15 +61,19 @@ module.exports.search = async function(req, res){
         }
     
         let query = {};
-        if(req.body.title){
-            query.title = req.body.title;
+        if(req.body.title && req.body.title.length){
+            let str = req.body.title;
+            let regex = new RegExp(str,'i');
+            query.title = {$regex: regex};
         }
-        if(req.body.author){
-            query.author = req.body.author;
+        if(req.body.author && req.body.author.length){
+            let str = req.body.author;
+            let regex = new RegExp(str,'i');
+            query.author = {$regex: regex};
         }
-        if(req.body.description){
-            const str = req.body.description;
-            const regex = new RegExp(str,'i');
+        if(req.body.description && req.body.description.length){
+            let str = req.body.description;
+            let regex = new RegExp(str,'i');
             query.description = {$regex: regex};
         }
         if(req.body.labels){
