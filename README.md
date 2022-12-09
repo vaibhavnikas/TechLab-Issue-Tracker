@@ -4,7 +4,7 @@ TechLab-Issue-Tracker is a web-application where users can track issues or bugs 
 # Deployment Link
 My project is deployed on Heroku. Click on the link given below to checkout my project.
 
-[Visit TechLab](https://techlab-issue-tracker.herokuapp.com/)
+[Visit TechLab](https://techlab-issue-tracker.onrender.com)
 
 # Technologies Used
 This project was built using the following technologies :
